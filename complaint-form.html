@@ -72,155 +72,138 @@
                     Укр
                   </a>
                   <span>/</span>
-              <a href="javascript:void(0);">
+                  <a href="javascript:void(0);">
                     Eng
                   </a>
-              </span>
+                </span>
               </span>
             </nav>
           </header>
         </div>
       </div>
     </div>
+    <section class="main-section-wrapper-content"></section>
+  </div>
+  <section class="complaint-form-section">
     <div class="container">
       <div class="row">
-        <section class="main-section-wrapper-content">
-          <div class="header-post-bottom">
-            <div class="breadcrum">
-              <a href="#">Головна</a>
-              <span>/</span>
-              <span>Новини</span>
+        <div class="section">
+          <h4>Нова скарга</h4>
+          <form class="new-complaint-form" action="#">
+            <div class="form-item">
+              <label for="complaintName" class="form-label">
+                <input id="complaintName" class="form-input" type="text" placeholder="Назва" required />
+              </label>
             </div>
-            <div class="user-avatar-block">
-              <img class="avatar" src="assets/images/user-big-photo-1.png" alt="Photo">
-              <div class="user">
-                <div class="user-name">Тетяна Печоник</div>
-                <div class="user-info">Голова правління at Центр інформації про права людини</div>
+            <div class="form-item">
+              <label for="shortDesc" class="form-label">
+                <input id="shortDesc" class="form-input" type="text" placeholder="Стислий опис" aria-multiline="true" required />
+              </label>
+            </div>
+            <textarea id="longDesc" placeholder="Опис"></textarea>
+            <div class="form-item">
+              <label for="defendantName" class="form-label">
+                <input id="defendantName" class="form-input" type="text" placeholder="Відповідач" required/>
+              </label>
+            </div>
+            <div class="multiple-select">
+              <select name="city" id="city">
+                <option value="aa" disabled selected>Місто</option>
+              </select>
+              <select name="articleName" id="articleName">
+                <option value="aa" disabled selected>Стаття №1</option>
+              </select>
+              <div class="datepicker-container">
+                <label for="datepicker">
+                  <input type="text" id="datepicker" placeholder="Дата" /><i class="fas fa-calendar-alt"></i></label>
+              </div>
+              <div class="file-label">
+                <label for="file"> Завантажити файл<i class="fas fa-upload"></i>
+                  <input id="file" type="file">
+                </label>
               </div>
             </div>
-          </div>
-        </section>
-      </div>
-    </div>
-  </div>
-  <section class="section-post">
-    <div class="container">
-      <div class="row">
-        <div class="post">
-          <p>Голова правління ГО "Центр інформації про права людини". Закінчила Київський національний університет імені Тараса Шевченка. У студентські роки очолювала Раду студентів та аспірантів та була віце-президенткою Української асоціації студентського самоврядування. </br>
-            </br>Навчалася у Гарвардському університеті за програмою Ukrainian Research Institute, в Українській школі політичних студій та в Києво-Могилянській школі журналістики (програма DFJ - "Журналістика цифрового майбутнього"). </br>
-            </br>Захистила дисертацію на тему: "Концепт "свобода слова" в сучасному українському мас-медійному дискурсі" у Київському національному університеті імені Тараса Шевченка. Має науковий ступінь кандидата наук.</br>
-            </br>Працювала в інформаційному агентстві УНІАН редактором спецпроекту "Права людини". Співпрацює з виданнями "Українська правда" і "Дзеркало тижня".</br>
-            </br>Є учасницею Національної спілки журналістів України і Комісії з журналістської етики.</p>
+            <div class="button-wrap">
+              <button class="button button-complaint button-upload">Завантажити</button>
+            </div>
+          </form>
+          <h4>Позивач</h4>
+          <form class="author-form" action="#">
+            <div class="form-item">
+              <label for="firstName" class="form-label">
+                <input id="firstName" class="form-input" type="text" placeholder="Прізвище" required/>
+              </label>
+            </div>
+            <div class="form-item">
+              <label for="lastName" class="form-label">
+                <input id="lastName" class="form-input" type="text" placeholder="Ім'я" required/>
+              </label>
+            </div>
+            <div class="form-item">
+              <label for="patronymic" class="form-label">
+                <input id="patronymic" class="form-input" type="text" placeholder="По батькові" required/>
+              </label>
+            </div>
+            <div class="multiple-select">
+              <select name="city" id="city">
+                <option value="aa" disabled selected>Місто</option>
+              </select>
+            </div>
+            <div class="form-item">
+              <label for="phoneNumber" class="form-label">
+                <input id="phoneNumber" class="form-input" type="text" placeholder="Телефон" />
+              </label>
+            </div>
+            <div class="form-item">
+              <label for="email" class="form-label">
+                <input id="email" class="form-input" type="text" placeholder="Електронна адреса" required/>
+              </label>
+            </div>
+            <div class="button-wrap">
+              <button class="button button-search button-supply">Подати</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
   </section>
-  <section class="section-blogs">
+  <section class="section-events">
     <div class="container">
       <div class="row">
-        <h4 class="blog-title">Публікації автора</h4>
-        <div class="blogs">
-          <div class="news-card" style="background-image: url('assets/images/photo-13.png');">
-            <a class="entire-link" href="#"></a>
-            <div class="user-block">
+        <div class="section">
+          <h4>Події</h4>
+          <div class="event-cards">
+            <div class="simple-card">
               <a class="entire-link" href="#"></a>
-              <img class="avatar" src="assets/images/user-photo-1.png" alt="Photo">
-              <div class="user-name">Валерія Шеремет</div>
+              <div class="simple-card-image" style="background-image: url('assets/images/photo-10.png');">
+              </div>
+              <h4>Чергове засідання Комісії з журналістської етики з журналістської етики</h4>
+              <span class="date">12 березня 2018</span>
             </div>
-            <span class="date">12 березня 2018</span>
-            <h4>Журналістика чи пропаганда? Як відокремити факти</h4>
-          </div>
-          <div class="news-card" style="background-image: url('assets/images/photo-14.png');">
-            <a class="entire-link" href="#"></a>
-            <div class="user-block">
+            <div class="simple-card">
               <a class="entire-link" href="#"></a>
-              <img class="avatar" src="assets/images/user-photo-2.png" alt="Photo">
-              <div class="user-name">Тетяна Печоник</div>
+              <div class="simple-card-image" style="background-image: url('assets/images/photo-11.png');">
+              </div>
+              <h4>Інформаційне суспільство в Україні: досягнення та пріоритети реформ з журналістської етики</h4>
+              <span class="date">12 березня 2018</span>
             </div>
-            <span class="date">12 березня 2018</span>
-            <h4>Чому мова ворожнечі з’являється у ЗМІ</h4>
-          </div>
-          <div class="news-card" style="background-image: url('assets/images/photo-15.png');">
-            <a class="entire-link" href="#"></a>
-            <div class="user-block">
+            <div class="simple-card">
               <a class="entire-link" href="#"></a>
-              <img class="avatar" src="assets/images/user-photo-3.png" alt="Photo">
-              <div class="user-name">Оксана Романюк</div>
+              <div class="simple-card-image" style="background-image: url('assets/images/photo-12.png');">
+              </div>
+              <h4>Експертне обговорення Рекомендацій для медіа в Івано-Франківську з журналістської етики</h4>
+              <span class="date">12 березня 2018</span>
             </div>
-            <span class="date">12 березня 2018</span>
-            <h4>10 рекомендацій для журналістів щодо гендерного балансу</h4>
-          </div>
-          <div class="news-card" style="background-image: url('assets/images/photo-16.png');">
-            <a class="entire-link" href="#"></a>
-            <div class="user-block">
-              <a class="entire-link" href="#"></a>
-              <img class="avatar" src="assets/images/user-photo-4.png" alt="Photo">
-              <div class="user-name">Володимир Мостовий</div>
-            </div>
-            <span class="date">12 березня 2018</span>
-            <h4>Мова ворожнечі в інформаційному просторі Криму</h4>
-          </div>
-          <div class="news-card" style="background-image: url('assets/images/photo-13.png');">
-            <a class="entire-link" href="#"></a>
-            <div class="user-block">
-              <a class="entire-link" href="#"></a>
-              <img class="avatar" src="assets/images/user-photo-1.png" alt="Photo">
-              <div class="user-name">Валерія Шеремет</div>
-            </div>
-            <span class="date">12 березня 2018</span>
-            <h4>Журналістика чи пропаганда? Як відокремити факти</h4>
-          </div>
-          <div class="news-card" style="background-image: url('assets/images/photo-14.png');">
-            <a class="entire-link" href="#"></a>
-            <div class="user-block">
-              <a class="entire-link" href="#"></a>
-              <img class="avatar" src="assets/images/user-photo-2.png" alt="Photo">
-              <div class="user-name">Тетяна Печоник</div>
-            </div>
-            <span class="date">12 березня 2018</span>
-            <h4>Чому мова ворожнечі з’являється у ЗМІ</h4>
-          </div>
-          <div class="news-card" style="background-image: url('assets/images/photo-15.png');">
-            <a class="entire-link" href="#"></a>
-            <div class="user-block">
-              <a class="entire-link" href="#"></a>
-              <img class="avatar" src="assets/images/user-photo-3.png" alt="Photo">
-              <div class="user-name">Оксана Романюк</div>
-            </div>
-            <span class="date">12 березня 2018</span>
-            <h4>10 рекомендацій для журналістів щодо гендерного балансу</h4>
-          </div>
-          <div class="news-card" style="background-image: url('assets/images/photo-16.png');">
-            <a class="entire-link" href="#"></a>
-            <div class="user-block">
-              <a class="entire-link" href="#"></a>
-              <img class="avatar" src="assets/images/user-photo-4.png" alt="Photo">
-              <div class="user-name">Володимир Мостовий</div>
-            </div>
-            <span class="date">12 березня 2018</span>
-            <h4>Мова ворожнечі в інформаційному просторі Криму</h4>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <div class="container">
-    <div class="row">
-      <div class="pagination">
-        <!-- <a href="#">Попередня<i class="fas fa-arrow-left"></i></a> -->
-        <a class="active" href="#">1</a>
-        <a href="#">2</a>
-        <a href="#">3</a>
-        <a href="#">Наступна<i class="fas fa-arrow-right"></i></a>
-      </div>
-    </div>
-  </div>
   <section class="section-month-topic">
     <div class="container">
       <div class="row">
         <div class="section">
-          <h4>Читайте також</h4>
+          <h4>Теми місяця</h4>
           <div class="main-page-news-bottom">
             <div class="simple-card">
               <a class="entire-link" href="#"></a>
@@ -324,6 +307,7 @@
     </div>
   </footer>
   <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
   <script src="js/bootstrap.js"></script>
   <script src="js/nice-select.js"></script>
   <script src="js/main.js"></script>
