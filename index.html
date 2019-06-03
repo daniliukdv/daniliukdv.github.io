@@ -1,502 +1,81 @@
-<!DOCTYPE html>
-<html lang="ua">
+<!doctype html>
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <title>Rankify</title>
+  <base href="/">
+  <style type="text/css">
+    body,
+    html {
+      height: 100%;
+    }
+
+    .app-loading {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+
+    .app-loading .spinner {
+      height: 200px;
+      width: 200px;
+      animation: rotate 2s linear infinite;
+      transform-origin: center center;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    .app-loading .spinner .path {
+      stroke-dasharray: 1, 200;
+      stroke-dashoffset: 0;
+      animation: dash 1.5s ease-in-out infinite;
+      stroke-linecap: round;
+      stroke: #ffb53d;
+    }
+
+    @keyframes rotate {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes dash {
+      0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+      }
+
+      50% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -35px;
+      }
+
+      100% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -124px;
+      }
+    }
+  </style>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>КЖЕ</title>
-  <link rel="stylesheet" href="css/main.css">
-</head>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="stylesheet" href="styles.3ec8435f566f6aa3ad67.css"></head>
 
 <body>
-  <div class="main-section">
-    <div class="container">
-      <div class="row flex-column">
-        <header class="k-header">
-          <a href="/" class="logo">
-            <img src="assets/images/logo.png" alt="Logotip" />
-          </a>
-          <button
-            type="button"
-            data-toggle="collapse"
-            data-target="#mobileMenu"
-            aria-controls="mobileMenu"
-            aria-expanded="false"
-            class="navbar-toggler"
-            aria-label="Toggle navigation">
-
-            <i class="fas fa-bars"></i>
-          </button>
-          <nav id="mobileMenu">
-            <span class="menu-left">
-              <a href="javascript:void(0);">
-                Новини
-              </a>
-              <a href="javascript:void(0);">
-                Події
-              </a>
-              <a href="javascript:void(0);">
-                Блоги
-              </a>
-              <a href="javascript:void(0);">
-                Кодекс
-              </a>
-              <a href="javascript:void(0);">
-                Бібліотека
-              </a>
-              <a href="javascript:void(0);">
-                Про комісію
-              </a>
-            </span>
-            <span class="menu-right">
-              <form
-                action="javascript:void(0);">
-
-                <label class="searchbar">
-                  <i
-                    class="fa fa-search"
-                    id="searchbar-icon"
-                    aria-hidden="true"></i>
-                  <i
-                    class="fa fa-times"
-                    id="searchbar-cross"
-                    aria-hidden="true"></i>
-                  <input
-                    type="text"
-                    id="searchbar-input" />
-                </label>
-              </form>
-              <span class="change-languages">
-                <a href="javascript:void(0);" class="active-language">
-                  Укр
-                </a>
-                <span>/</span>
-            <a href="javascript:void(0);">
-                  Eng
-                </a>
-            </span>
-            </span>
-          </nav>
-        </header>
-        <section class="search-section">
-          <form action="#" class="find-complaint">
-            <div class="search">
-              <label for="search" class="form-label">
-                <input
-                  id=search
-                  class="form-input"
-                  type="text" placeholder="Пошук по назві" />
-              </label>
-            </div>
-            <div>
-              <select name="findComplaint" id="findComplaint">
-                <option value="aa" disabled selected>Скарга</option>
-              </select>
-              <select name="findComplaint" id="findComplaint">
-                <option value="aa" disabled selected>Стаття</option>
-              </select>
-              <select name="findComplaint" id="findComplaint">
-                <option value="aa" disabled selected>Подана</option>
-              </select>
-              <select name="findComplaint" id="findComplaint">
-                <option value="aa" disabled selected>Грудень</option>
-              </select>
-              <select name="findComplaint" id="findComplaint">
-                <option value="aa" disabled selected>2017</option>
-              </select>
-
-              <button class="button button-search">
-                <i class="fas fa-search"></i>
-                Знайти
-              </button>
-
-              <div class="submit-complaint">
-                <button class="button button-complaint">
-                  Подати скаргу
-                </button>
-              </div>
-            </div>
-          </form>
-        </section>
-      </div>
+  <app-root>
+    <div class="app-loading">
+      <div class="logo"></div>
+      <svg class="spinner" viewBox="25 25 50 50">
+        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+      </svg>
     </div>
-  </div>
-  <section class="section-results">
-    <div class="container">
-      <div class="row">
-        <div class="section">
-          <h4>Рішення коміссії</h4>
-          <div class="result-cards">
-            <div class="card">
-              <span class="considered">Розглядається</span>
-              <span class="date">12 березня 2018</span>
-              <h2><a href="#">Мая Голуб проти ТРК «Аверс»</a></h2>
-              <p>Звинувачується:<a href="#">ТРК "Аверс"</a></p>
-            </div>
-            <div class="card">
-              <span class="solved">Вирішена</span>
-              <span class="date">12 березня 2018</span>
-              <h2><a href="#">Мати Героя Небесної сотні на журналістку газети "Деснянка" </a></h2>
-              <p>Звинувачується:<a href="#">журналістка Валерія Шеремет</a></p>
-            </div>
-            <div class="card">
-              <span class="considered">Розглядається</span>
-              <span class="date">12 березня 2018</span>
-              <h2><a href="#">Провокація та посилювання ворожнечі</a></h2>
-              <p>Звинувачується:<a href="#">"Апостроф"</a>, <a href="#">"РИА Новости"</a>, <a href="#">"Hyser"</a></p>
-            </div>
-            <div class="card">
-              <span class="solved">Вирішена</span>
-              <span class="date">12 березня 2018</span>
-              <h2><a href="#">Порушення редакцією газети «Вільне слово»(м.Рівне) </a></h2>
-              <p>Звинувачується:<a href="#">ТРК "Аверс"</a></p>
-            </div>
-          </div>
-          <div class="show-more-wrap">
-            <a class="show-more" href="#">
-              Всі рішення
-              <i class="fas fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section-main-page-news">
-    <div class="container">
-      <div class="row">
-        <div class="section">
-          <h4>Новини</h4>
-          <div class="main-page-news-top">
-            <div class="news-card news-card-big" style="background-image: url('assets/images/photo-1.png');">
-              <a class="entire-link" href="#"></a>
-              <h4>Журналістика чи пропаганда? Як відокремити факти</h4>
-            </div>
-            <div class="main-page-news-top-right">
-              <div class="news-card news-card-small" style="background-image: url('assets/images/photo-2.png');">
-                <a class="entire-link" href="#"></a>
-                <h4>Журналіст не має права брати на себе роль судді, - Олексій Погорелов</h4>
-              </div>
-              <div class="some-information">
-                <p>Комісія є корпоративним інститутом громадянського суспільства, що розглядає конфліктні ситуації етичного та професійного характеру</p>
-                <a class="show-more" href="#">Детальніше про комісію <i class="fas fa-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="main-page-news-bottom">
-            <div class="simple-card">
-              <a class="entire-link" href="#"></a>
-              <div class="simple-card-image" style="background-image: url('assets/images/photo-3.png');">
-              </div>
-              <span class="date">12 березня 2018</span>
-              <h4>Комісія з журналістської етики на Docudays UA</h4>
-              <p>У неділю, 25 березня, з 16:00 до 17:30, у IZONE (вулиця Набережно-Лугова, 8)</p>
-            </div>
-            <div class="simple-card">
-              <a class="entire-link" href="#"></a>
-              <div class="simple-card-image" style="background-image: url('assets/images/photo-4.png');">
-              </div>
-              <span class="date">12 березня 2018</span>
-              <h4>Комісія з журналістської етики на Docudays UA</h4>
-              <p>У неділю, 25 березня, з 16:00 до 17:30, у IZONE (вулиця Набережно-Лугова, 8)</p>
-            </div>
-            <div class="simple-card">
-              <a class="entire-link" href="#"></a>
-              <div class="simple-card-image" style="background-image: url('assets/images/photo-5.png');">
-              </div>
-              <span class="date">12 березня 2018</span>
-              <h4>Комісія з журналістської етики на Docudays UA</h4>
-              <p>У неділю, 25 березня, з 16:00 до 17:30, у IZONE (вулиця Набережно-Лугова, 8)</p>
-            </div>
-            <div class="simple-card">
-              <a class="entire-link" href="#"></a>
-              <div class="simple-card-image" style="background-image: url('assets/images/photo-6.png');">
-              </div>
-              <span class="date">12 березня 2018</span>
-              <h4>Комісія з журналістської етики на Docudays UA</h4>
-              <p>У неділю, 25 березня, з 16:00 до 17:30, у IZONE (вулиця Набережно-Лугова, 8)</p>
-            </div>
-            <div class="simple-card">
-              <a class="entire-link" href="#"></a>
-              <div class="simple-card-image" style="background-image: url('assets/images/photo-7.png');">
-              </div>
-              <span class="date">12 березня 2018</span>
-              <h4>Комісія з журналістської етики на Docudays UA</h4>
-              <p>У неділю, 25 березня, з 16:00 до 17:30, у IZONE (вулиця Набережно-Лугова, 8)</p>
-            </div>
-            <div class="simple-card">
-              <a class="entire-link" href="#"></a>
-              <div class="simple-card-image" style="background-image: url('assets/images/photo-8.png');">
-              </div>
-              <span class="date">12 березня 2018</span>
-              <h4>Комісія з журналістської етики на Docudays UA</h4>
-              <p>У неділю, 25 березня, з 16:00 до 17:30, у IZONE (вулиця Набережно-Лугова, 8)</p>
-            </div>
-            <div class="news-card" style="background-image: url('assets/images/photo-9.png');">
-              <a class="entire-link" href="#"></a>
-              <span class="date">12 березня 2018</span>
-              <h4>Саморегуляція преси Німеччини: досвід для України</h4>
-            </div>
-          </div>
-          <div class="show-more-wrap"><a class="show-more" href="#">Всі новини <i class="fas fa-arrow-right"></i></a></div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section-events">
-    <div class="container">
-      <div class="row">
-        <div class="section">
-          <h4>Події</h4>
-          <div class="event-cards">
-            <div class="simple-card">
-              <a class="entire-link" href="#"></a>
-              <div class="simple-card-image" style="background-image: url('assets/images/photo-10.png');">
-              </div>
-              <h4>Чергове засідання Комісії з журналістської етики з журналістської етики</h4>
-              <span class="date">12 березня 2018</span>
-            </div>
-            <div class="simple-card">
-              <a class="entire-link" href="#"></a>
-              <div class="simple-card-image" style="background-image: url('assets/images/photo-11.png');">
-              </div>
-              <h4>Інформаційне суспільство в Україні: досягнення та пріоритети реформ з журналістської етики</h4>
-              <span class="date">12 березня 2018</span>
-            </div>
-            <div class="simple-card">
-              <a class="entire-link" href="#"></a>
-              <div class="simple-card-image" style="background-image: url('assets/images/photo-12.png');">
-              </div>
-              <h4>Експертне обговорення Рекомендацій для медіа в Івано-Франківську з журналістської етики</h4>
-              <span class="date">12 березня 2018</span>
-            </div>
-          </div>
-          <div class="show-more-wrap"><a class="show-more" href="#">Всі події <i class="fas fa-arrow-right"></i></a></div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section-blogs">
-    <div class="container">
-      <div class="row">
-        <div class="section">
-          <h4>Блоги</h4>
-          <div class="blogs">
-            <div class="news-card" style="background-image: url('assets/images/photo-13.png');">
-              <a class="entire-link" href="#"></a>
-              <div class="user-block">
-                <a class="entire-link" href="#"></a>
-                <img class="avatar" src="assets/images/user-photo-1.png" alt="Photo">
-                <div class="user-name">Валерія Шеремет</div>
-              </div>
-              <span class="date">12 березня 2018</span>
-              <h4>Журналістика чи пропаганда? Як відокремити факти</h4>
-            </div>
-            <div class="news-card" style="background-image: url('assets/images/photo-14.png');">
-              <a class="entire-link" href="#"></a>
-              <div class="user-block">
-                <a class="entire-link" href="#"></a>
-                <img class="avatar" src="assets/images/user-photo-2.png" alt="Photo">
-                <div class="user-name">Тетяна Печоник</div>
-              </div>
-              <span class="date">12 березня 2018</span>
-              <h4>Чому мова ворожнечі з’являється у ЗМІ</h4>
-            </div>
-            <div class="news-card" style="background-image: url('assets/images/photo-15.png');">
-              <a class="entire-link" href="#"></a>
-              <div class="user-block">
-                <a class="entire-link" href="#"></a>
-                <img class="avatar" src="assets/images/user-photo-3.png" alt="Photo">
-                <div class="user-name">Оксана Романюк</div>
-              </div>
-              <span class="date">12 березня 2018</span>
-              <h4>10 рекомендацій для журналістів щодо гендерного балансу</h4>
-            </div>
-            <div class="news-card" style="background-image: url('assets/images/photo-16.png');">
-              <a class="entire-link" href="#"></a>
-              <div class="user-block">
-                <a class="entire-link" href="#"></a>
-                <img class="avatar" src="assets/images/user-photo-4.png" alt="Photo">
-                <div class="user-name">Володимир Мостовий</div>
-              </div>
-              <span class="date">12 березня 2018</span>
-              <h4>Мова ворожнечі в інформаційному просторі Криму</h4>
-            </div>
-          </div>
-          <div class="show-more-wrap"><a class="show-more" href="#">Всі блоги <i class="fas fa-arrow-right"></i></a></div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section-library">
-    <div class="container">
-      <div class="row">
-        <div class="section">
-          <h4>Бібліотека</h4>
-          <div class="files">
-            <div class="file">
-              <a class="entire-link" href="#"></a>
-              <div class="pdf" style="background-image: url('assets/images/pdf.png');"></div>
-              Стандарт рівності: Посібник пресової практики з гендерної перспективи (2015)
-            </div>
-            <div class="file">
-              <a class="entire-link" href="#"></a>
-              <div class="pdf" style="background-image: url('assets/images/pdf.png');"></div>
-              Учебное пособие по гендерно-этической журналистике. Часть 2 (2012)
-            </div>
-            <div class="file">
-              <a class="entire-link" href="#"></a>
-              <div class="pdf" style="background-image: url('assets/images/pdf.png');"></div>
-              Журналістська етика: Підручник (2007)
-            </div>
-            <div class="file">
-              <a class="entire-link" href="#"></a>
-              <div class="pdf" style="background-image: url('assets/images/pdf.png');"></div>
-              Журналістська етика: посібник для підготовки до державного іспиту (2014)
-            </div>
-            <div class="file">
-              <a class="entire-link" href="#"></a>
-              <div class="pdf" style="background-image: url('assets/images/pdf.png');"></div>
-              Український медіа-ландшафт (2015)
-            </div>
-            <div class="file">
-              <a class="entire-link" href="#"></a>
-              <div class="pdf" style="background-image: url('assets/images/pdf.png');"></div>
-              Взаємодія журналістів із працівниками міліції під час масових заходів (2014)
-            </div>
-            <div class="file">
-              <a class="entire-link" href="#"></a>
-              <div class="pdf" style="background-image: url('assets/images/pdf.png');"></div>
-              Журналістська етика: Підручник (2007) Часть 2 (2012)
-            </div>
-            <div class="file">
-              <a class="entire-link" href="#"></a>
-              <div class="pdf" style="background-image: url('assets/images/pdf.png');"></div>
-              Пропаганда и свобода масcовой информации (2016)
-            </div>
-            <div class="file">
-              <a class="entire-link" href="#"></a>
-              <div class="pdf" style="background-image: url('assets/images/pdf.png');"></div>
-              Журналістська етика: посібник для підготовки до державного іспиту (2018)
-            </div>
-          </div>
-          <div class="show-more-wrap"><a class="show-more" href="#">Всі матеріали <i class="fas fa-arrow-right"></i></a></div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section-month-topic">
-    <div class="container">
-      <div class="row">
-        <div class="section">
-          <h4>Теми місяця</h4>
-          <div class="main-page-news-bottom">
-            <div class="simple-card">
-              <a class="entire-link" href="#"></a>
-              <div class="simple-card-image" style="background-image: url('assets/images/photo-3.png');">
-              </div>
-              <span class="date">12 березня 2018</span>
-              <div class="long-text">
-                <h4>Комісія з журналістської етики на Docudays UA</h4>
-                <p>У неділю, 25 березня, з 16:00 до 17:30, у IZONE (вулиця Набережно-Лугова, 8)</p>
-              </div>
-            </div>
-            <div class="simple-card">
-              <a class="entire-link" href="#"></a>
-              <div class="simple-card-image" style="background-image: url('assets/images/photo-4.png');">
-              </div>
-              <span class="date">12 березня 2018</span>
-              <h4>Школа журналістської етики в конфліктних та пост-конфліктних суспільствах </h4>
-              <p class="long-text"></p>
-            </div>
-            <div class="simple-card">
-              <a class="entire-link" href="#"></a>
-              <div class="simple-card-image" style="background-image: url('assets/images/photo-5.png');">
-              </div>
-              <span class="date">12 березня 2018</span>
-              <h4>Запрошення гостей та титрування експертів: поради</h4>
-              <p class="long-text">Титрування експертів, як представників </p>
-            </div>
-            <div class="simple-card">
-              <a class="entire-link" href="#"></a>
-              <div class="simple-card-image" style="background-image: url('assets/images/photo-6.png');">
-              </div>
-              <span class="date">12 березня 2018</span>
-              <h4>Комісія з журналістської етики на Docudays UA</h4>
-              <p class="long-text">У неділю, 25 березня, з 16:00 до 17:30, у IZONE (вулиця Набережно-Лугова, 8)</p>
-            </div>
-          </div>
-          <div class="show-more-wrap"><a class="show-more" href="#">Всі теми <i class="fas fa-arrow-right"></i></a></div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="footer">
-          <div class="footer-left">
-            <div class="logo"><a href="#"><img src="assets/images/logo.png" alt="logo"></a></div>
-            <span>© 2018.  Всі права захищені.</span>
-            <span>Розроблено в <a href="#" class="author">robot.red</a></span>
-          </div>
-          <div class="footer-middle">
-            <ul class="nav">
-              <li><a href="#">Про нас</a></li>
-              <li><a href="#">Кодекс F.A.Q.</a></li>
-              <li><a href="#">Місія</a></li>
-              <li><a href="#">Скарги</a></li>
-              <li><a href="#">Сатут</a></li>
-              <li><a href="#">Рішення</a></li>
-              <li><a href="#">Склад</a></li>
-              <li><a href="#">Заяви</a></li>
-              <li><a href="#">Звіти</a></li>
-              <li><a href="#">Блог</a></li>
-              <li><a href="#">Контакти</a></li>
-              <li><a href="#">Бібліотека</a></li>
-            </ul>
-          </div>
-          <div class="footer-right">
-            <div class="text-input">
-              <input type='text' class='input' required>
-              <label class='label'>Ваш email</label>
-              <span class='line'></span>
-            </div>
-            <button class="button btn-subscribe" name="subscribe" id="subscribe" type="submit">Підписатися</button>
-            <div class="social-media">
-              <a href="#" class="twitter">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="#" class="facebook">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <ul class="side-menu">
-    <li class="side-menu-item">
-      <a style="background-image: url('assets/images/code-icon.png');">
-        <span>Кодекс</span>
-      </a>
-    </li>
-    <li class="side-menu-item">
-      <a style="background-image: url('assets/images/complaint-icon.png');">
-       <span>Скарга</span>
-     </a>
-    </li>
-    <li class="side-menu-item">
-      <a style="background-image: url('assets/images/question.png');">
-        <span>Задати питання</span>
-      </a>
-    </li>
-  </ul>
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.js"></script>
-  <script src="js/nice-select.js"></script>
-  <script src="js/main.js"></script>
-</body>
-
+  </app-root>
+<script type="text/javascript" src="runtime.65443148892bdf570075.js"></script><script type="text/javascript" src="es2015-polyfills.bc8247f7c8e7c6298aa8.js" nomodule></script><script type="text/javascript" src="polyfills.41953a310af96d836098.js"></script><script type="text/javascript" src="scripts.6b9e0ea0acd42a3d343d.js"></script><script type="text/javascript" src="main.e2ff09c0ff39a8030121.js"></script></body>
 </html>
